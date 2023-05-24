@@ -1,0 +1,1070 @@
+{% block content  %}
+{% load static %}
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>linktree</title>
+    <style>
+        body{
+
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            width: 100vw;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            position: absolute;
+        }
+        header{
+            width: 95%;
+            max-width: 788px;
+            justify-content: space-between;
+            padding: 12px;
+            margin-top: 15px;
+            display:flex;
+            position: relative;
+            z-index: 999; /*thing can came upp the herader*/
+    align-items: center;
+    padding: 10px 200px;
+
+
+        }
+
+
+
+        .share-button{
+            width: 40px;
+            height: 40px;
+            border-radius: 20px;
+            background-color: #AAC9CE;
+
+        }
+        .container{
+            width: 91%;
+            max-width: 680px;
+            margin: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+
+        }
+        .title{
+            width: 100%;
+            background-color: #AAC9CE;
+            border-radius: 17px;
+            margin: 7px;
+            height: 56px;
+            display: flex;
+            color: white;
+
+
+
+
+
+        }
+        P{
+            align-items: center;
+            text-align: center;
+            position: relative;
+            right: 300px;
+            top:16px;
+
+        }
+
+        .title:hover{
+            transition: cubic-bezier(.07,1.41,.82,1.41) 0.2s;
+            transform: scale(1.02);
+            background-color: white;
+            color: #AAC9CE;
+
+
+
+        }
+
+        a{
+            text-decoration: none;
+            color: #F3DBCF;
+            font-weight: bold;
+            justify-content: space-between;
+
+
+
+        }
+
+        h1{
+            font-size: 20px;
+            margin-bottom: 30px;
+            position: relative;
+            --s: 0.1em;   /* the thickness of the line */
+  --c: #aedfeed0; /* the color */
+
+  color: #00000091;
+  padding-bottom: var(--s);
+  background:
+    linear-gradient(90deg,var(--c) 50%,#6666 0) calc(100% - var(--_p,0%))/200% 100%,
+    linear-gradient(var(--c) 0 0) 0% 100%/var(--_p,0%) var(--s) no-repeat;
+  -webkit-background-clip: text,padding-box;
+          background-clip: text,padding-box;
+  transition: 0.5s;
+}
+h1:hover {--_p: 100%}
+
+
+
+        .img-container{
+            height: 200px;
+            width: 200px;
+           border-radius: 100px;
+            overflow: hidden;
+            position: relative;
+
+
+        }
+
+        .img-container img{
+            height: 100%;
+            position: relative;
+            box-shadow: inset 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+
+
+
+        }
+        img:hover{
+            background-color: #AAC9CE;
+            box-shadow: 0px 10px 20px 5px rgba(0, 0, 0, 0.6);
+  transform: translateY(-5px);
+        }
+
+
+
+        .share-button i {
+            margin-left: 12px;
+            margin-top: 10px;
+            border-radius: 20px;
+            color: black;
+
+
+
+
+
+        }
+        a i{
+            font-size: 2.3em;
+            position: relative;
+            top: 10px;
+            left: 10px;
+        }
+        .navigation a{
+    text-decoration: none;
+    color: rgb(36, 99, 194);
+    font-size: 1.1em;
+    font-weight: 500;
+    padding-left: 30px;
+    /*التباعد بين الكلمات*/
+    text-transform: uppercase;
+}
+.navigation a:hover{
+color: blueviolet;
+}
+
+        h1, h2, p {
+    margin: 0;
+}
+
+/*===================
+animation01
+====================*/
+
+.animation01 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.animation01 div {
+    width: 20%;
+    height: 100%;
+    animation: animation01 0.275s ease-in forwards;
+    transform-origin: bottom;
+    opacity: 0;
+}
+
+.animation01 div:nth-child(1) {
+    background-color: #AAC9CE;
+    animation-delay: 0.4s;
+}
+
+.animation01 div:nth-child(2) {
+    background-color: #B6B4C2;
+    animation-delay: 0.3s;
+}
+
+.animation01 div:nth-child(3) {
+    background-color: #C9BBC8;
+    animation-delay: 0.2s;
+}
+
+.animation01 div:nth-child(4) {
+    background-color: #E5C1CD;
+    animation-delay: 0.1s;
+}
+
+.animation01 div:nth-child(5) {
+    background-color: #F3DBCF;
+}
+
+@keyframes animation01 {
+    0% {
+        transform: scale3d(1, 0, 1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale3d(1, 1, 1);
+        opacity: 1;
+    }
+}
+
+/*===================
+animation02
+====================*/
+
+.animation02 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.animation02 div {
+    position: absolute;
+    width: 0;
+    height: 0;
+    animation: animation02 0.6s ease-in 0.6s forwards;
+    opacity: 0;
+}
+
+.animation02 div:nth-child(1) {
+    top: 0;
+    left: 0;
+    border-top: 100vh solid transparent;
+    border-right: 100vw solid #f2f3df;
+    transform-origin: bottom right;
+}
+
+.animation02 div:nth-child(2) {
+    right: 0;
+    bottom: 0;
+    border-bottom: 100vh solid transparent;
+    border-left: 100vw solid #f2f3df;
+    transform-origin: top left;
+}
+
+@keyframes animation02 {
+    0% {
+        transform: scale3d(0, 0, 1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale3d(1, 1, 1);
+        opacity: 1;
+    }
+}
+
+/*===================
+animation03
+====================*/
+
+.animation03 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 13vw;
+    height: 13vw;
+}
+
+.animation03 .circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transform-origin: center;
+    background-color: transparent;
+    z-index: 9998;
+}
+
+.animation03 .circle_element01 {
+    width: 13vw;
+    height: 13vw;
+    border: 0.25vw solid #54988b;
+    border-radius: 50%;
+    animation: animation03_circle 0.3s ease-in-out 0.5s forwards, animation03_circle_element01 0.3s linear 0.9s forwards;
+    opacity: 0;
+}
+
+.animation03 .circle_element02 {
+    width: 9vw;
+    height: 9vw;
+    border: 0.5vw solid #4b5e58;
+    border-radius: 50%;
+    animation: animation03_circle 0.4s ease-in-out 0.5s forwards, animation03_circle_element02 0.2s linear 1.0s forwards;
+    opacity: 0;
+}
+
+.animation03 .circle_element03 {
+    width: 4vw;
+    height: 4vw;
+    border: 1vw solid #404a52;
+    border-radius: 50%;
+    animation: animation03_circle 0.45s ease-in-out 0.5s forwards, animation03_circle_element03 0.15s linear 1.4s forwards;
+    opacity: 0;
+}
+
+@keyframes animation03_circle {
+    0% {
+        transform: scale3d(0, 0, 1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale3d(1, 1, 1);
+        opacity: 1;
+    }
+}
+
+@keyframes animation03_circle_element01 {
+    0% {
+        border: 0.25vw solid #AAC9CE;
+    }
+    100% {
+        border: 0 solid #B6B4C2;
+    }
+}
+
+@keyframes animation03_circle_element02 {
+    0% {
+        border: 0.5vw solid #C9BBC8;
+    }
+    100% {
+        border: 0 solid #E5C1CD;
+    }
+}
+
+@keyframes animation03_circle_element03 {
+    0% {
+        border: 1vw solid #F3DBCF;
+    }
+    100% {
+        border: 0 solid #404a52;
+    }
+}
+
+/*===================
+animation04
+====================*/
+
+.animation04 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+}
+
+.animation04 .line_wrapper {
+    position: absolute;
+    opacity: 0;
+}
+
+.animation04 .line {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #F3DBCF;
+    opacity: 0;
+}
+
+/*===========
+line01
+===========*/
+
+.animation04 .line_wrapper01 {
+    top: -20%;
+    left: 50%;
+    width: 2.5%;
+    height: 30%;
+    animation: animation04_line_wrapper01 0.45s ease-in 0.8s forwards;
+}
+
+.animation04 .line01 {
+    animation: animation04_line01 0.45s ease-in 0.5s forwards;
+}
+
+@keyframes animation04_line_wrapper01 {
+    0% {
+        transform-origin: top;
+        transform: scale3d(1, 1, 1);
+        opacity: 1;
+    }
+    100% {
+        transform-origin: top;
+        transform: scale3d(1, 0, 1);
+        opacity: 1;
+    }
+}
+
+@keyframes animation04_line01 {
+    0% {
+        transform-origin: bottom;
+        transform: scale3d(1, 0, 1);
+        opacity: 1;
+    }
+    100% {
+        transform-origin: bottom;
+        transform: scale3d(1, 1, 1);
+        opacity: 1;
+    }
+}
+
+/*===========
+line02
+===========*/
+
+.animation04 .rotate45 {
+    display: block;
+    position: absolute;
+    top: 22.5%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    transform: rotate(45deg);
+}
+
+.animation04 .line_wrapper02 {
+    width: 2.5%;
+    height: 30%;
+    animation: animation04_line_wrapper02 0.45s ease-in 0.8s forwards;
+}
+
+.animation04 .line02 {
+    animation: animation04_line02 0.45s ease-in 0.5s forwards;
+}
+
+@keyframes animation04_line_wrapper02 {
+    0% {
+        transform-origin: top;
+        transform: scale3d(1, 1, 1);
+        opacity: 1;
+    }
+    100% {
+        transform-origin: top;
+        transform: scale3d(1, 0, 1);
+        opacity: 1;
+    }
+}
+
+@keyframes animation04_line02 {
+    0% {
+        transform-origin: bottom;
+        transform: scale3d(1, 0, 1);
+        opacity: 1;
+    }
+    100% {
+        transform-origin: bottom;
+        transform: scale3d(1, 1, 1);
+        opacity: 1;
+    }
+}
+
+/*===========
+line03
+===========*/
+
+.animation04 .line_wrapper03 {
+    top: 50%;
+    left: 90%;
+    width: 30%;
+    height: 2.5%;
+    animation: animation04_line_wrapper03 0.45s ease-in 0.8s forwards;
+}
+
+.animation04 .line03 {
+    animation: animation04_line03 0.45s ease-in 0.5s forwards;
+}
+
+@keyframes animation04_line_wrapper03 {
+    0% {
+        transform-origin: right;
+        transform: scale3d(1, 1, 1);
+        opacity: 1;
+    }
+    100% {
+        transform-origin: right;
+        transform: scale3d(0, 1, 1);
+        opacity: 1;
+    }
+}
+
+@keyframes animation04_line03 {
+    0% {
+        transform-origin: left;
+        transform: scale3d(0, 1, 1);
+        opacity: 1;
+    }
+    100% {
+        transform-origin: left;
+        transform: scale3d(1, 1, 1);
+        opacity: 1;
+    }
+}
+
+/*===========
+line04
+===========*/
+
+.animation04 .rotate135 {
+    display: block;
+    position: absolute;
+    top: 49.5%;
+    left: -22%;
+    width: 100%;
+    height: 100%;
+    transform: rotate(135deg);
+}
+
+.animation04 .line_wrapper04 {
+    width: 2.5%;
+    height: 30%;
+    animation: animation04_line_wrapper04 0.45s ease-in 0.8s forwards;
+}
+
+.animation04 .line04 {
+    animation: animation04_line04 0.45s ease-in 0.5s forwards;
+}
+
+@keyframes animation04_line_wrapper04 {
+    0% {
+        transform-origin: top;
+        transform: scale3d(1, 1, 1);
+        opacity: 1;
+    }
+    100% {
+        transform-origin: top;
+        transform: scale3d(1, 0, 1);
+        opacity: 1;
+    }
+}
+
+@keyframes animation04_line04 {
+    0% {
+        transform-origin: bottom;
+        transform: scale3d(1, 0, 1);
+        opacity: 1;
+    }
+    100% {
+        transform-origin: bottom;
+        transform: scale3d(1, 1, 1);
+        opacity: 1;
+    }
+}
+
+/*===========
+line05
+===========*/
+
+.animation04 .line_wrapper05 {
+    top: 90%;
+    left: 50%;
+    width: 2.5%;
+    height: 30%;
+    animation: animation04_line_wrapper05 0.45s ease-in 0.8s forwards;
+}
+
+.animation04 .line05 {
+    animation: animation04_line05 0.45s ease-in 0.5s forwards;
+}
+
+@keyframes animation04_line_wrapper05 {
+    0% {
+        transform-origin: bottom;
+        transform: scale3d(1, 1, 1);
+        opacity: 1;
+    }
+    100% {
+        transform-origin: bottom;
+        transform: scale3d(1, 0, 1);
+        opacity: 1;
+    }
+}
+
+@keyframes animation04_line05 {
+    0% {
+        transform-origin: top;
+        transform: scale3d(1, 0, 1);
+        opacity: 1;
+    }
+    100% {
+        transform-origin: top;
+        transform: scale3d(1, 1, 1);
+        opacity: 1;
+    }
+}
+
+/*===========
+line06
+===========*/
+
+.animation04 .rotate-135 {
+    display: block;
+    position: absolute;
+    top: -19.5%;
+    left: -48%;
+    width: 100%;
+    height: 100%;
+    transform: rotate(-135deg);
+}
+
+.animation04 .line_wrapper06 {
+    width: 2.5%;
+    height: 30%;
+    animation: animation04_line_wrapper06 0.45s ease-in 0.8s forwards;
+}
+
+.animation04 .line06 {
+    animation: animation04_line06 0.45s ease-in 0.5s forwards;
+}
+
+@keyframes animation04_line_wrapper06 {
+    0% {
+        transform-origin: top;
+        transform: scale3d(1, 1, 1);
+        opacity: 1;
+    }
+    100% {
+        transform-origin: top;
+        transform: scale3d(1, 0, 1);
+        opacity: 1;
+    }
+}
+
+@keyframes animation04_line06 {
+    0% {
+        transform-origin: bottom;
+        transform: scale3d(1, 0, 1);
+        opacity: 1;
+    }
+    100% {
+        transform-origin: bottom;
+        transform: scale3d(1, 1, 1);
+        opacity: 1;
+    }
+}
+
+/*===========
+line07
+===========*/
+
+.animation04 .line_wrapper07 {
+    top: 50%;
+    left: -20%;
+    width: 30%;
+    height: 2.5%;
+    animation: animation04_line_wrapper07 0.45s ease-in 0.8s forwards;
+}
+
+.animation04 .line07 {
+    animation: animation04_line07 0.45s ease-in 0.5s forwards;
+}
+
+@keyframes animation04_line_wrapper07 {
+    0% {
+        transform-origin: left;
+        transform: scale3d(1, 1, 1);
+        opacity: 1;
+    }
+    100% {
+        transform-origin: left;
+        transform: scale3d(0, 1, 1);
+        opacity: 1;
+    }
+}
+
+@keyframes animation04_line07 {
+    0% {
+        transform-origin: right;
+        transform: scale3d(0, 1, 1);
+        opacity: 1;
+    }
+    100% {
+        transform-origin: right;
+        transform: scale3d(1, 1, 1);
+        opacity: 1;
+    }
+}
+
+/*===========
+line08
+===========*/
+
+.animation04 .rotate-45 {
+    display: block;
+    position: absolute;
+    top: -49.0%;
+    left: 20%;
+    width: 100%;
+    height: 100%;
+    transform: rotate(-45deg);
+}
+
+.animation04 .line_wrapper08 {
+    width: 2.5%;
+    height: 30%;
+    animation: animation04_line_wrapper08 0.45s ease-in 0.8s forwards;
+}
+
+.animation04 .line08 {
+    animation: animation04_line08 0.45s ease-in 0.5s forwards;
+}
+
+@keyframes animation04_line_wrapper08 {
+    0% {
+        transform-origin: top;
+        transform: scale3d(1, 1, 1);
+        opacity: 1;
+    }
+    100% {
+        transform-origin: top;
+        transform: scale3d(1, 0, 1);
+        opacity: 1;
+    }
+}
+
+@keyframes animation04_line08 {
+    0% {
+        transform-origin: bottom;
+        transform: scale3d(1, 0, 1);
+        opacity: 1;
+    }
+    100% {
+        transform-origin: bottom;
+        transform: scale3d(1, 1, 1);
+        opacity: 1;
+    }
+}
+
+/*===================
+animation05
+====================*/
+
+.animation05 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+}
+
+.double_wrapper02 {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    animation: animation05_double forwards;
+    opacity: 0;
+}
+
+.double_wrapper01 {
+    display: block;
+    position: absolute;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.double_wrapper01::before {
+    content: "";
+    display: block;
+    position: absolute;
+    background: #f2f3df;
+    z-index: 2;
+}
+
+.double_wrapper01::after {
+    content: "";
+    display: block;
+    position: absolute;
+    background: #AAC9CE;
+    z-index: 3;
+}
+
+.double_block {
+    position: absolute;
+    background: #B6B4C2;
+    border-radius: 50%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </style>
+</head>
+<body>
+
+
+
+
+    <div class="animation01">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <div class="animation02">
+        <div></div>
+        <div></div>
+    </div>
+    <div class="animation03">
+        <div class="circle">
+            <div class="circle_element01"></div>
+        </div>
+        <div class="circle">
+            <div class="circle_element02"></div>
+        </div>
+        <div class="circle">
+            <div class="circle_element03"></div>
+        </div>
+        <div class="animation04">
+            <div class="line_wrapper line_wrapper01">
+                <span class="line line01"></span>
+            </div>
+            <div class="rotate45">
+                <div class="line_wrapper line_wrapper02">
+                    <span class="line line02"></span>
+                </div>
+            </div>
+            <div class="line_wrapper line_wrapper03">
+                <span class="line line03"></span>
+            </div>
+            <div class="rotate135">
+                <div class="line_wrapper line_wrapper04">
+                    <span class="line line04"></span>
+                </div>
+            </div>
+            <div class="line_wrapper line_wrapper05">
+                <span class="line line05"></span>
+            </div>
+            <div class="rotate-135">
+                <div class="line_wrapper line_wrapper06">
+                    <span class="line line06"></span>
+                </div>
+            </div>
+            <div class="line_wrapper line_wrapper07">
+                <span class="line line07"></span>
+            </div>
+            <div class="rotate-45">
+                <div class="line_wrapper line_wrapper08">
+                    <span class="line line08"></span>
+                </div>
+            </div>
+        </div>
+        <div class="animation05">
+            <div class="double_wrapper02 green02">
+                <div class="double_wrapper01 green01">
+                    <div class="double_block green00"></div>
+                </div>
+            </div>
+            <div class="double_wrapper02 navy02">
+                <div class="double_wrapper01 navy01">
+                    <div class="double_block navy00"></div>
+                </div>
+            </div>
+            <div class="double_wrapper02 yellow02">
+                <div class="double_wrapper01 yellow01">
+                    <div class="double_block yellow00"></div>
+                </div>
+            </div>
+            <div class="double_wrapper02 blue02">
+                <div class="double_wrapper01 blue01">
+                    <div class="double_block blue00"></div>
+                </div>
+            </div>
+            <div class="double_wrapper02 red02">
+                <div class="double_wrapper01 red01">
+                    <div class="double_block red00"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="animation06">
+        <div class="rhombus05">
+            <div class="rhombus04">
+                <div class="rhombus03">
+                    <div class="rhombus02">
+                        <div class="rhombus01"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="animation07">
+        <div class="circle">
+            <div class="circle_element01"></div>
+        </div>
+        <div class="line_wrapper line_wrapper01">
+            <span class="line line01"></span>
+        </div>
+        <div class="rotate60">
+            <div class="line_wrapper line_wrapper02">
+                <span class="line line02"></span>
+            </div>
+        </div>
+        <div class="rotate120">
+            <div class="line_wrapper line_wrapper03">
+                <span class="line line03"></span>
+            </div>
+        </div>
+        <div class="line_wrapper line_wrapper04">
+            <span class="line line04"></span>
+        </div>
+        <div class="rotate-120">
+            <div class="line_wrapper line_wrapper05">
+                <span class="line line05"></span>
+            </div>
+        </div>
+        <div class="rotate-60">
+            <div class="line_wrapper line_wrapper06">
+                <span class="line line06"></span>
+            </div>
+        </div>
+    </div>
+    <div class="animation08">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+
+
+
+
+
+    <header>
+        <div class="share-button">
+            <i class="fa-solid fa-share-nodes"></i>
+        </div>
+        <nav class="navigation"> <!--navigation links--->
+            <a href="{% url 'home' %}" class="HOME">HOME</a>
+            <a href="{% url 'products' %}">STORE</a>
+
+        </nav>
+    </header>
+
+
+
+    <div class="container">
+
+    <div class="img-container">
+
+        <img src="{% static 'WhatsApp Image 2023-05-21 at 23.27.44.jpg' %}">
+
+    </div>
+    <h1>@daisy.Abayas</h1>
+
+
+
+
+<a class="title" href="{% url 'products' %}">
+
+    <i class="fa-solid fa-store"></i>
+
+    <p> STORE ""</p>
+
+
+</a>
+
+
+
+<a class="title" href="http://wa.me/+966532393108">
+
+<i class="fa-brands fa-whatsapp"></i>
+<p> WhatsApp</p>
+
+</a>
+
+
+<a class="title" href="https://instagram.com/daisy.abayas?igshid=MzRlODBiNWFlZA==">
+    <i class="fa-brands fa-instagram"></i>
+
+    <p>Instagram</p>
+
+
+
+
+</a>
+
+
+<a class="title"href="https://www.tiktok.com/ar/">
+
+
+
+    <i class="fa-brands fa-tiktok"></i>
+
+
+    <p> TikTok""  </p>
+
+
+
+
+
+
+</a>
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+{% endblock %}

@@ -1,0 +1,149 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content  %}
+
+
+
+
+
+
+
+     <link href="r.css" type="text/css" rel="stylesheet">
+ <link href='https://fonts.googleapis.com/css?family=Baloo 2' rel='stylesheet'>
+<style>
+body{
+    padding-top: 100px;
+             padding-bottom: 100px;
+             overflow-x: hidden;
+}
+  #prodetails {
+      display: flex;
+      margin-top: 20px;
+  }
+
+
+
+  #prodetails .single-pro-image {
+      box-shadow: 20px 20px 30px rgba(236,230,230,0.89);
+      border: 1px solid #DFDFDF;
+      margin-right: 50px;
+      width: 30%;
+  }
+  .small-img-group {
+  display: flex;
+  justify-content: space-between;
+  margin: 5px;
+  }
+  .small-img-col{
+
+  flex-basis: 2;
+  margin: 5px;
+  }
+  #prodetails .single-pro-details{
+
+      width: 50%;
+      padding-top:30px;
+  }
+  #prodetails .single-pro-details h4{
+      font-family: 'Baloo 2';font-size: 22px;
+          margin : 0 ;
+          color: #AE98D5;
+          font-size: 20px;
+
+  }
+  #prodetails .single-pro-details h2{
+      font-family: 'Baloo 2';
+      font-size: 26px;
+  }
+  #prodetails .single-pro-details select{
+      display: block;
+      padding: 1px 5px;
+      margin-bottom: 5px;
+  }
+  #prodetails .single-pro-details input{
+      width: 45px;
+      height: 25px;
+      padding-left: 10px;
+      font-size: 16px;
+      margin-right: 10px;
+  }
+
+
+  #prodetails .single-pro-details button{
+      background :#7EAED5;
+      color: #fff;
+
+      height: 30px;
+  }
+  #prodetails .single-pro-details span{
+       color: #204F76;
+      font-family: 'Baloo 2';font-size: 22px;
+      line-height:25px;
+  }
+  #prodetails .single-pro-details h6{
+      color: #326C98;
+          font-family: 'Baloo 2';font-size: 22px;
+
+  }
+  #prodetails .single-pro-details .c{
+      font-family: "MemphisRiver", Sans-Serif;
+          font-size: 5em;
+          color: #7EAED5;
+  }
+  </style>
+<section id="prodetails" class="section-p1">
+     <div class="single-pro-image">
+          <img src=" {% static 'MicrosoftTeams-image (1).png'%}" width="100%" id="MainImg" alt="">
+
+          <div class="small-img-group">
+              <div class="small-img-col">
+                   <img src="IMG_0653.JPG" width="80%" class="small-img" alt="">
+                   </div>
+          <div class="small-img-col">
+              <img src="IMG_0654.JPG" width="80%" class="small-img" alt="">
+              </div>
+
+
+             </div>
+             </div>
+
+
+
+   <div class="single-pro-details">
+        <h1 class="c">Abaya Details</h1>
+        <h4>Women's Fashion</h4>
+        <h2>.00</h2>
+
+
+
+          <button  onclick = "window.location.href={% url 'cart' %}"
+             class="addtocart" >
+           <div class="pretext">
+  <i class="fas fa-cart-plus"></i> Go to cart
+          </div>
+       <br>
+         <h4>Product Details</h4> <span>The Gildan Ultra Cotton T-shirt is made from a substantial 6.0 oz. per sq. yd. fabric constructed from 100% cotton, this classic fit preshrunk jersey knit provides unmatched comfort with each wear. Featuring a taped neck and shoulder, and a seamless double-needle collar, and available in a range of colors, it offers it all in the ultimate head-turning package.</span>
+         </div>
+
+</section>
+
+<script>
+    var MainImg=document.getElementById("MainImg");
+    var smallimg=document.getElementsByClassName("small-img");
+
+    smallimg[0].onclick=function(){
+        MainImg.src=smallimg[0].src;
+    }
+    smallimg[1].onclick=function(){
+            MainImg.src=smallimg[1].src;
+        }
+   smallimg[2].onclick=function(){
+             MainImg.src=smallimg[2].src;
+        }
+
+</script>
+
+
+
+
+{% endblock %}
