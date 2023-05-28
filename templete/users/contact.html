@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+
+
+
+{% block content  %}
+
+
+    <style>
+
+    body {
+        margin: 3px;
+        background-color: #FFE6FA;
+    }
+
+form {
+    width: 600px;
+    min-height: 500px;
+    height: auto;
+    border-radius: 4px;
+    margin: 3% auto;
+    box-shadow: 0 9px 50px hsla(20, 67%, 75%, 0.31);
+    padding: 143px;
+    background-image: linear-gradient(-225deg, #E3FDF5 50%, #FFE6FA 50%);
+      display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: space-around;
+    justify-content: space-around;
+
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+
+
+}
+  input,select,textarea{
+                width: 100%;
+                padding: 10px;
+                border-radius: 5px;
+                margin: 10px 5px;
+
+
+            }
+            input[type=submit]{
+                width: 40%;
+                background-color: bisque;
+                color: black;
+                padding: 12px 20px;
+                font-weight: bold;
+
+
+            }
+            input[type=submit]:hover{
+                background-color: lightslategray;
+            }
+        .container{
+            padding: 20px;
+
+
+        }
+        h1{
+            position: relative;
+            text-align: center;
+            background-color: #E3FDF5;
+            color:black;
+
+        }
+    </style>
+
+ <div class="container">
+
+ <form action="{% url 'contact' %}" method="POST" >
+
+     {% csrf_token %}
+
+
+     <h1>Contact Us</h1>
+     <form><label for="FirstName">First name:</label><input type="text" name="name" size="15" placeholder="Your name...">
+                    <br/><label for="lastName">Email:</label><input type="email" name="email" size="15" placeholder="Your email is.."/><br/>
+         <label for="subject">Subject:</label><input type="text" name="subject" size="15">
+
+
+                  <label for="subject">Your Massage</label><textarea id="subject" name="massage" placeholder="Write something.." >
+                        </textarea><br/>
+                        <input type="submit" value="submit">
+
+     </form></div>
+
+
+
+       {% endblock %}
